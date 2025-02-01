@@ -1,6 +1,5 @@
-import { useState } from 'react'
-import './App.css'
 import { TokenList } from './components/TokenList/TokenList'
+import { RootProvider } from './providers/RootProvider';
 
 function App() {
   /**
@@ -17,10 +16,11 @@ function App() {
    * 
    */
 
+
   return (
-    <>
+    <RootProvider>
       <TokenList isLoading={false} />
-    </>
+    </RootProvider>
   )
 }
 

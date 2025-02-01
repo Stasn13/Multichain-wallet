@@ -12,12 +12,15 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@lifi/sdk": "^3.5.2",
     "@mui/material": "^6.4.2",
+    "@tanstack/react-query": "^5.66.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
+    "@tanstack/eslint-plugin-query": "^5.66.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react-swc": "^3.5.0",
