@@ -13,7 +13,7 @@ function App() {
    * 6. Write tests
    * 7. Write docs
    * 8. Error and loading states handling
-   * 
+   * 9. add README.md
    */
 
 
