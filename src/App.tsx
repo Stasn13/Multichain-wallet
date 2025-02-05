@@ -1,4 +1,5 @@
 import { TokenList } from './components/TokenList/TokenList'
+import { WalletsController } from './components/WalletsController/WalletsController';
 import { RootProvider } from './providers/RootProvider';
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
 
   return (
     <RootProvider>
-      <TokenList isLoading={false} />
+      <WalletsController/>
+      <TokenList />
     </RootProvider>
   )
 }
