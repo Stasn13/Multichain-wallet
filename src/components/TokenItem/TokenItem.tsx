@@ -1,4 +1,5 @@
 import {
+    type ListItemProps,
     Avatar,
     Box,
     ListItem,
@@ -6,23 +7,29 @@ import {
     ListItemText,
     Skeleton,
     Typography,
-} from '@mui/material'
+} from '@mui/material';
+import { formatUnits } from 'viem';
 
-interface TokenItemProps {
+interface TokenItemProps extends ListItemProps {
     token: any // TODO: define token type
     isBalanceLoading?: boolean
-}
+};
 
 export const TokenItem: React.FC<TokenItemProps> = ({
     token,
-    isBalanceLoading
+    isBalanceLoading,
+    ...props
 }) => {
     return (
         <ListItem
             dense
+            {...props}
         >
             <ListItemAvatar>
-                <Avatar src={token.logoURI} alt={token.symbol}>
+                <Avatar
+                    src={token.logoURI}
+                    alt={token.symbol}
+                >
                     {token.symbol?.[0]}
                 </Avatar>
             </ListItemAvatar>
@@ -36,7 +43,7 @@ export const TokenItem: React.FC<TokenItemProps> = ({
                 isBalanceLoading ? (
                     <TokenAmountSkeleton />
                 ) : (
-                    <Typography>{token.amount}</Typography>
+                    <Typography>{token?.amount ? formatUnits(token.amount, token.decimals) : ""}</Typography>
                 )
             }
         </ListItem>
@@ -44,11 +51,11 @@ export const TokenItem: React.FC<TokenItemProps> = ({
 }
 
 
-export const TokenListItemSkeleton = () => {
+export const TokenListItemSkeleton = ({ ...props }: ListItemProps) => {
     return (
         <ListItem
             secondaryAction={<TokenAmountSkeleton />}
-            disablePadding
+            {...props}
         >
             <ListItemAvatar>
                 <Skeleton
@@ -59,8 +66,8 @@ export const TokenListItemSkeleton = () => {
                 />
             </ListItemAvatar>
             <ListItemText
-                primary={<Skeleton variant="text" />}
-                secondary={<Skeleton variant="text" />}
+                primary={<Skeleton variant="text" width={44} height={24} />}
+                secondary={<Skeleton variant="text" width={64} height={24} />}
             />
         </ListItem>
     )
@@ -68,14 +75,11 @@ export const TokenListItemSkeleton = () => {
 
 export const TokenAmountSkeleton: React.FC = () => {
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-end',
-            }}
-        >
-            <Skeleton variant="text" />
+        <Box>
+            <Skeleton
+                variant="text"
+                width={40} height={24}
+            />
         </Box>
     )
 }
