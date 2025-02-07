@@ -8,6 +8,7 @@ import {
     Skeleton,
     Typography,
 } from '@mui/material';
+import React from 'react';
 import { formatUnits } from 'viem';
 
 interface TokenItemProps extends ListItemProps {
@@ -15,7 +16,7 @@ interface TokenItemProps extends ListItemProps {
     isBalanceLoading?: boolean
 };
 
-export const TokenItem: React.FC<TokenItemProps> = ({
+export const TokenItem: React.FC<TokenItemProps> = React.memo(({
     token,
     isBalanceLoading,
     ...props
@@ -48,7 +49,7 @@ export const TokenItem: React.FC<TokenItemProps> = ({
             }
         </ListItem>
     )
-}
+})
 
 
 export const TokenListItemSkeleton = ({ ...props }: ListItemProps) => {
