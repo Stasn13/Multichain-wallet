@@ -7,6 +7,7 @@ import { useAppKitProvider, useAppKitState } from '@reown/appkit/react';
 import { useEffect } from "react";
 import { useWalletsState, Wallets } from "../providers/WalletsProvider";
 import { modal } from "../providers/RootProvider";
+import { useWallet } from "@solana/wallet-adapter-react";
 
 
 const LIFI_CONNECTED_WALLETS = "LIFI_CONNECTED_WALLETS";
