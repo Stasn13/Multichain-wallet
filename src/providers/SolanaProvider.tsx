@@ -1,4 +1,4 @@
-import type { Adapter } from '@solana/wallet-adapter-base';
+import type { Adapter, BaseWalletAdapter } from '@solana/wallet-adapter-base';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import {
     ConnectionProvider,
@@ -6,6 +6,7 @@ import {
 } from '@solana/wallet-adapter-react';
 import { clusterApiUrl } from '@solana/web3.js';
 import type { FC, PropsWithChildren } from 'react';
+import { solanaWeb3JsAdapter } from '../configs/appKit';
 
 const endpoint = clusterApiUrl(WalletAdapterNetwork.Mainnet);
 /**
@@ -20,7 +21,7 @@ const endpoint = clusterApiUrl(WalletAdapterNetwork.Mainnet);
  * instantiate its legacy wallet adapter here. Common legacy adapters can be found
  * in the npm package `@solana/wallet-adapter-wallets`.
  */
-const wallets: Adapter[] = [];
+const wallets: Adapter[] = solanaWeb3JsAdapter.wallets || [];
 
 export const SolanaWalletProvider: FC<PropsWithChildren> = ({ children }) => {
     return (
