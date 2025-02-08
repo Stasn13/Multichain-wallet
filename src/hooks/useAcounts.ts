@@ -1,13 +1,9 @@
-import { solanaWeb3JsAdapter, wagmiAdapter } from "../configs/appKit";
-import { useAppKitAccount, useAppKitEvents, useDisconnect, useWalletInfo } from '@reown/appkit/react'
-import { useAppKitConnection } from '@reown/appkit-adapter-solana/react'
-import { useAccount, useAccount as useAccountInternal, useConfig as useWagmiConfig } from 'wagmi'
+import { useAppKitAccount, useWalletInfo } from '@reown/appkit/react'
+import { useConfig as useWagmiConfig } from 'wagmi'
 import { disconnect } from 'wagmi/actions'
-import { useAppKitProvider, useAppKitState } from '@reown/appkit/react';
+import { useAppKitState } from '@reown/appkit/react';
 import { useEffect } from "react";
 import { useWalletsState, Wallets } from "../providers/WalletsProvider";
-import { modal } from "../providers/RootProvider";
-import { useWallet } from "@solana/wallet-adapter-react";
 
 
 const LIFI_CONNECTED_WALLETS = "LIFI_CONNECTED_WALLETS";
@@ -20,10 +16,10 @@ export interface AccountsResult {
 export const useAccounts = (): AccountsResult => {
     // const { disconnect } = useDisconnect();
     const wagmiConfig = useWagmiConfig()
-    const { address, isConnected } = useAppKitAccount();
+    const { address } = useAppKitAccount();
     const { walletInfo } = useWalletInfo()
     const { evm, svm, utxo, setWalletsState } = useWalletsState();
-    const { open, selectedNetworkId } = useAppKitState()
+    const { selectedNetworkId } = useAppKitState()
     const accounts = { evm, svm, utxo };
 
     const netwrokIds: { [key: string]: string } = {
@@ -80,7 +76,6 @@ export const useAccounts = (): AccountsResult => {
             const accountsState = { ...accounts, [networkId]: updatedAccount };
             handlePersist.set(accountsState);
             setWalletsState!(accountsState);
-            console.log("WALLET INFO:: on connect:", walletInfo?.icon, address);
         }
     }, [address, walletInfo?.icon])
     // subscribeAccount(console.log);
@@ -89,8 +84,6 @@ export const useAccounts = (): AccountsResult => {
     // console.log(events)
 
     // const { connected } = useWallet();
-    const wagmiAccount = useAccount();
-    const { connection } = useAppKitConnection()
 
     // const { disconnect } = useDisconnect()
 

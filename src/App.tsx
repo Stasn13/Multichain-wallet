@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box';
-import { TokenList } from './components/TokenList/TokenList'
 import { TokenTabs } from './components/TokenTabs/TokenTabs';
 import { WalletsController } from './components/WalletsController/WalletsController';
 import { RootProvider } from './providers/RootProvider';

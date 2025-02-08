@@ -1,4 +1,3 @@
-import { createAppKit } from '@reown/appkit'
 import { BaseWalletAdapter, SolanaAdapter } from '@reown/appkit-adapter-solana'
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
 import { BitcoinAdapter } from '@reown/appkit-adapter-bitcoin'

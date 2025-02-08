@@ -1,4 +1,4 @@
-import type { Adapter, BaseWalletAdapter } from '@solana/wallet-adapter-base';
+import type { Adapter } from '@solana/wallet-adapter-base';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import {
     ConnectionProvider,

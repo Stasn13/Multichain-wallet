@@ -2,19 +2,15 @@ import { ChainType, getTokens, getTokenBalances, ChainId, TokenAmount } from '@l
 import { useQuery } from '@tanstack/react-query'
 import { useMemo } from 'react';
 import { formatUnits } from 'viem';
-// import {  } from "@lifi/wallet-management";
-import { useWallet } from "@solana/wallet-adapter-react";
-import { useDisconnect } from '@reown/appkit/react';
 
 
 /**
- * Returns the balances of tokens that address holds.
+ * Returns the balances of tokens that address holds, tokens list and loaders state.
  * @param address - A wallet address.
  * @param chainType - Specify blockchain type.
  * @returns An object containing the tokens, balances and laoding state.
  */
 export const useGetTokenBalances = (address: string | null, chainType: ChainType = ChainType.EVM, chainId: number = ChainId.ETH) => {
-    // disconnect()
 
     const { data, isLoading: tokenLoading } = useQuery({
         queryKey: [`tokens-${chainType}`],

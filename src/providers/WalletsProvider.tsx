@@ -1,4 +1,4 @@
-import { createContext, FC, PropsWithChildren, useContext, useReducer, useState } from 'react';
+import { createContext, FC, PropsWithChildren, useContext, useState } from 'react';
 
 interface Ecosystem {
     imageUrl: string
@@ -22,21 +22,21 @@ const initialContext = {
         isConnected: false,
         address: null,
         icon: null,
-        name: "evm"
+        name: "evm" as WalletTypes
     },
     svm: {
         imageUrl: "https://raw.githubusercontent.com/lifinance/types/main/src/assets/icons/chains/solana.svg",
         isConnected: false,
         address: null,
         icon: null,
-        name: "svm"
+        name: "svm" as WalletTypes
     },
     utxo: {
         imageUrl: "https://raw.githubusercontent.com/lifinance/types/main/src/assets/icons/chains/bitcoin.svg",
         isConnected: false,
         address: null,
         icon: null,
-        name: "utxo"
+        name: "utxo" as WalletTypes
     },
     setWalletsState: null
 }

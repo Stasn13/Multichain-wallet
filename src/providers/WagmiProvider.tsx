@@ -7,7 +7,7 @@ import {
   createConfig as createWagmiConfig,
   injected
 } from 'wagmi'
-import { ChainType, config, createConfig, EVM, getChains, Solana, UTXO } from '@lifi/sdk'
+import { ChainType, config, createConfig, EVM, getChains, Solana } from '@lifi/sdk'
 import { mainnet } from 'viem/chains';
 import { getWalletClient, switchChain } from '@wagmi/core';
 import { createClient, http } from 'viem';
