@@ -1,3 +1,51 @@
+# Multichain wallet
+> Wallet solution powered by LI.FI and Reown
+> Live demo link [_here_](https:// .vercel.app/).
+
+## Table of Contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Setup](#setup)
+* [Areas for Improvement](#areas-for-improvement)
+
+
+## General Information
+- This project showcasing key features of LI.FI SDK
+
+
+## Technologies Used
+- React.js
+- LI.FI SDK
+- Reown AppKit
+- TanStackQuery
+- Wagmi
+
+
+## Features
+List the ready features here:
+- Shows list of existing tokens in Ethereum, Solana and Bitcoin exosystem
+- Read token balances
+- Mobile friendly!
+
+
+## Screenshots
+![Example screenshot](./preview.png)
+
+
+## Setup
+Make sure that you've Node > 20
+`pnpm install`
+
+## Areas for Improvement
+
+Future Development Focus:
+- The primary emphasis should be on enhancing the wallet connection experience. Appkit might be changed to a custom implemntation, resulting in reduction of bandle size and providing better accounts control.
+- UI toolkit implemenation. MUI is good enough for PoC, but should be changed for a custom solution with a11y support.
+- Implement wallet interaction within send/swap/bridge features.
+- The TokenList component is bottleneck of application performance. Might be optimised with lazy loading for inifinity scroll
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
