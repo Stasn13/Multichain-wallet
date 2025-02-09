@@ -41,7 +41,6 @@ export const useAccounts = (): AccountsResult => {
             isConnected: false
         };
         const accountsState = { ...accounts, [ecosystem]: updatedAccount };
-        console.log("DISCONNECTING::", ecosystem)
 
         if (ecosystem === "evm") {
             await disconnect(wagmiConfig);
@@ -62,7 +61,6 @@ export const useAccounts = (): AccountsResult => {
     useEffect(() => {
         const persistedState = handlePersist.get();
         if (persistedState) {
-            console.log(JSON.parse(persistedState))
             setWalletsState!(JSON.parse(persistedState) as Wallets);
         }
     }, []);
