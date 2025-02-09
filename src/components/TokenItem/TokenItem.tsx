@@ -12,7 +12,13 @@ import React from 'react';
 import { formatUnits } from 'viem';
 
 interface TokenItemProps extends ListItemProps {
-    token: any // TODO: define token type
+    token: {
+        name: string
+        logoURI: string
+        symbol: string
+        amount: bigint
+        decimals: number
+    }
     isBalanceLoading?: boolean
 };
 

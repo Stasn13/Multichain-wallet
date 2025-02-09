@@ -1,6 +1,6 @@
 # Multichain wallet
 > Wallet solution powered by LI.FI and Reown
-> Live demo link [_here_](https:// .vercel.app/).
+> Live demo link [_here_](https://multichain-wallet-cyan.vercel.app/).
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -21,6 +21,7 @@
 - Reown AppKit
 - TanStackQuery
 - Wagmi
+- tests written with jest using vitest
 
 
 ## Features
@@ -28,6 +29,7 @@ List the ready features here:
 - Shows list of existing tokens in Ethereum, Solana and Bitcoin exosystem
 - Read token balances
 - Mobile friendly!
+- Set of unit-tests to cover connection and render functionality
 
 
 ## Screenshots
@@ -36,15 +38,17 @@ List the ready features here:
 
 ## Setup
 Make sure that you've Node > 20
+
 `pnpm install`
 
 ## Areas for Improvement
 
 Future Development Focus:
 - The primary emphasis should be on enhancing the wallet connection experience. Appkit might be changed to a custom implemntation, resulting in reduction of bandle size and providing better accounts control.
-- UI toolkit implemenation. MUI is good enough for PoC, but should be changed for a custom solution with a11y support.
+- UI toolkit implemenation. MUI is good enough for PoC, but should be changed for a custom solution with a11y support. Meantime MUI components might be refactored incapsulating styles to `*.style.ts` files
 - Implement wallet interaction within send/swap/bridge features.
-- The TokenList component is bottleneck of application performance. Might be optimised with lazy loading for inifinity scroll
+- The TokenList component is bottleneck of application performance. Might be enhanced with lazy loading for inifinity scroll.
+- Unit tests might cover change wallet edge cases
 
 # React + TypeScript + Vite
 

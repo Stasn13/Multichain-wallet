@@ -9,7 +9,7 @@ import { SolflareWalletAdapter, PhantomWalletAdapter } from '@solana/wallet-adap
 export const networks: [AppKitNetwork, ...AppKitNetwork[]] = [mainnet, solana, bitcoin]
 
 // 0. Get projectId from https://cloud.reown.com
-export const projectId = 'd149fd0b3fe44636121032492ed688e2' // TODO move sensitive info to .env variables
+export const projectId = process.env.APPKIT_PROJECT_ID || 'xxxxxxxxxxxxxxxxxx';
 
 // 2. Create Solana adapter
 export const solanaWeb3JsAdapter = new SolanaAdapter({
@@ -32,6 +32,6 @@ export const bitcoinAdapter = new BitcoinAdapter({
 export const metadata = {
   name: 'LIFI-multichain-wallet',
   description: 'Multichain wallet implementation',
-  url: 'https://example.com', // TODO: change it after deploy
+  url: 'https://multichain-wallet-cyan.vercel.app/',
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
