@@ -12,7 +12,11 @@ export interface AccountsResult {
     accounts: Wallets
     handleDisconnect: (ecosystem: keyof Wallets) => void
 }
-// args?: UseAccountArgs
+
+/**
+ * Hook to manage the ecoystem connections and persist accounts state.
+ * @returns An object accounts state and disconnect func.
+ */
 export const useAccounts = (): AccountsResult => {
     // const { disconnect } = useDisconnect();
     const wagmiConfig = useWagmiConfig()

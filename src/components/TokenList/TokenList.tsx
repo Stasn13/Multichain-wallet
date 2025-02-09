@@ -8,7 +8,7 @@ import React from 'react';
 
 // The TokenList component is bottleneck of application performance. The token list is virtualised, token list virtualised, caluclations cached.
 
-interface TokenListProps {
+export interface TokenListProps {
     address: string | null
     chainType: ChainType
     chainId: ChainId
@@ -76,6 +76,7 @@ export const TokenList: FC<TokenListProps> = React.memo(({
                     textAlign={"center"}
                     mt={26}
                     children="Please connect corresponding wallet"
+                    data-testid="not-connected"
                 />
                 :
                 <div style={{ height: `${tokenItems.length * itemHeight - itemHeight}px` }}>

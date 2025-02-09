@@ -7,9 +7,7 @@ function App() {
   /**
    * BACKLOG:
    *
-   * 2. Deploy to Vercel
    * 5. Document wallet connection
-   * 6. Write tests
    * 7. Write docs
    * 8. Error and loading states handling
    * 10. test bitcoin support
