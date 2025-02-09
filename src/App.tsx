@@ -7,10 +7,7 @@ function App() {
   /**
    * BACKLOG:
    *
-   * 5. Document wallet connection
-   * 7. Write docs
-   * 10. test bitcoin support
-   * 12. document solutions
+   * 5. Document wallet connection in details
    * 13. errors handling
    */
 
