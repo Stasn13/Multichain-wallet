@@ -14,9 +14,9 @@ import { formatUnits } from 'viem';
 interface TokenItemProps extends ListItemProps {
     token: {
         name: string
-        logoURI: string
+        logoURI?: string
         symbol: string
-        amount: bigint
+        amount?: bigint
         decimals: number
     }
     isBalanceLoading?: boolean
