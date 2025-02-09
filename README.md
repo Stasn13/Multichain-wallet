@@ -8,6 +8,7 @@
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
+* [Frontend Architecture](#frontend-architecture)
 * [Areas for Improvement](#areas-for-improvement)
 
 
@@ -40,6 +41,23 @@ List the ready features here:
 Make sure that you've Node > 20
 
 `pnpm install`
+
+Create `.env` with `VITE_APPKIT_PROJECT_ID=xxxxxxxxxxxxxxxxxxx` setting your `projectId`. You can get it on the official Reown [_dashboard_](https://cloud.reown.com/app/).
+
+## Frontend Architecture
+
+1. Frameworks and Libraries
+The application build with vite React - a flexible foundation allows maintain modular system and expand further functionality for next updates.
+
+2. Component-Based Architecture
+The system uses [_MUI_](https://mui.com/material-ui/getting-started/) as main design solution. MUI supports great accessibility and allows developers to build own UI library based on existing components.
+
+3. State Management
+Effective state management is crucial for smooth user interactions. Existing requirements enables to approach with Context API and [_TanStack Query_](https://tanstack.com/query/v4/docs/framework/react/overview) across different components, ensuring everything is synchronized.
+
+4. API Integration:
+Wallet integration is powered by [_LI.FI SDK_](https://docs.li.fi/integrate-li.fi-sdk/li.fi-sdk-overview) and [_LI.FI Wallet Management_](https://docs.li.fi/integrate-li.fi-widget/wallet-management). Wallet connection feature implemented by [_Reown AppKit_](https://docs.reown.com/appkit/overview). Further enhancement steps described in [Areas for Improvement](#areas-for-improvement)
+
 
 ## Areas for Improvement
 
