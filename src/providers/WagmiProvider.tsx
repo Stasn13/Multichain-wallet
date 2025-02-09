@@ -7,17 +7,17 @@ import {
   createConfig as createWagmiConfig,
   injected
 } from 'wagmi'
-import { ChainType, config, createConfig, EVM, getChains, Solana } from '@lifi/sdk'
+import { ChainType, config, createConfig, EVM, getChains, Solana, UTXO } from '@lifi/sdk'
 import { mainnet } from 'viem/chains';
-import { getWalletClient, switchChain } from '@wagmi/core';
+import { getConnectorClient, getWalletClient, switchChain } from '@wagmi/core';
 import { createClient, http } from 'viem';
-import { useSyncWagmiConfig /*, getConnectorClient, useConfig */ } from "@lifi/wallet-management";
+import { useSyncWagmiConfig /*, getConnectorClient, useConfig */,createDefaultBigmiConfig } from "@lifi/wallet-management";
 import { useQuery } from "@tanstack/react-query";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { SignerWalletAdapter } from "@solana/wallet-adapter-base";
 
 export const WagmiProvider: FC<PropsWithChildren> = ({ children }) => {
-  // const bigmiConfig = useConfig();
+  const {config: bigmiConfig} = createDefaultBigmiConfig();
 
   // List of Wagmi connectors
   // WalletConnect is added to allow most of popular wallets
@@ -48,9 +48,9 @@ export const WagmiProvider: FC<PropsWithChildren> = ({ children }) => {
           return wallet?.adapter as SignerWalletAdapter;
         },
       }),
-      // UTXO({
-      //   getWalletClient: () => getConnectorClient(bigmiConfig),
-      // }),
+      UTXO({
+        getWalletClient: () => getConnectorClient(bigmiConfig),
+      }),
     ],
     // We disable chain preloading and will update chain configuration in runtime
     preloadChains: false,
