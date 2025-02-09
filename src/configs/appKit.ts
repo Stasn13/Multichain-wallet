@@ -9,7 +9,7 @@ import { SolflareWalletAdapter, PhantomWalletAdapter } from '@solana/wallet-adap
 export const networks: [AppKitNetwork, ...AppKitNetwork[]] = [mainnet, solana, bitcoin]
 
 // 0. Get projectId from https://cloud.reown.com
-export const projectId = process.env.APPKIT_PROJECT_ID || 'xxxxxxxxxxxxxxxxxx';
+export const projectId = import.meta.env.VITE_APPKIT_PROJECT_ID || 'xxxxxxxxxxxxxxxxxx';
 
 // 2. Create Solana adapter
 export const solanaWeb3JsAdapter = new SolanaAdapter({

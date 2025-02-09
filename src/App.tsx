@@ -9,7 +9,6 @@ function App() {
    *
    * 5. Document wallet connection
    * 7. Write docs
-   * 8. Error and loading states handling
    * 10. test bitcoin support
    * 12. document solutions
    * 13. errors handling
